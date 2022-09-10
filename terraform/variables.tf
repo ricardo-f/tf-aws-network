@@ -14,6 +14,6 @@ variable "pub_subnet" {
 }
 
 variable "az" {
-  default = "us-east-1a"
+  default     = "us-east-1a"
   description = "AZ for the subnets, since this was a Lab one az was suffice, in prod envs use a minimum of 2 azs"
 }
