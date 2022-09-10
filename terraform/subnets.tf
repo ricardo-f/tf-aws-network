@@ -1,8 +1,8 @@
 resource "aws_subnet" "private" {
   vpc_id                  = aws_vpc.main.id
-  cidr_block              = local.pvt_sub
+  cidr_block              = var.pvt_subnet
   map_public_ip_on_launch = false
-  availability_zone       = var.azs
+  availability_zone       = var.az
 }
 
 resource "aws_route_table_association" "private" {
@@ -12,9 +12,9 @@ resource "aws_route_table_association" "private" {
 
 resource "aws_subnet" "public" {
   vpc_id                  = aws_vpc.main.id
-  cidr_block              = local.pub_sub
+  cidr_block              = var.pub_subnet
   map_public_ip_on_launch = false
-  availability_zone       = var.azs
+  availability_zone       = var.az
 }
 
 resource "aws_route_table_association" "public" {
