@@ -11,7 +11,6 @@ resource "aws_vpc_endpoint" "ssm" {
 resource "aws_vpc_endpoint_subnet_association" "ssm" {
   vpc_endpoint_id = aws_vpc_endpoint.ssm.id
   subnet_id       = aws_subnet.private.id
-
 }
 
 resource "aws_vpc_endpoint" "ec2messages" {
